@@ -1,8 +1,22 @@
 class Magazine:
-    def __init__(self, id, name, category):
+    def __init__(self, id, title, category):
         self.id = id
-        self.name = name
+        self.title = title
         self.category = category
+        
+    def _create_magazine(self):
+        pass
 
-    def __repr__(self):
-        return f'<Magazine {self.name}>'
+    @property
+    def id(self):
+        return self._id
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def category(self):
+        return self._category
+    
+    
