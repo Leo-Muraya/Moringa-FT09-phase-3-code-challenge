@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from database.connection import get_db_connection 
 
 class Magazine:
@@ -43,6 +48,7 @@ class Magazine:
     def __repr__(self):
         return f"<Magazine {self.name} ({self.category})>"
     
+ 
 
     
 
