@@ -4,7 +4,7 @@ from models.article import Article
 from models.author import Author
 from models.magazine import Magazine
 
-def main():    
+def main():
     create_tables()
 
     author_name = input("Enter author's name: ")
@@ -32,9 +32,12 @@ def main():
 
     # Create an article
     cursor.execute('INSERT INTO articles (title, content, author_id, magazine_id) VALUES (?, ?, ?, ?)',
-                   (article_title, article_content, author_id, magazine_id))
+    (article_title, article_content, author_id, magazine_id))
 
     conn.commit()
+
+    # Query the database for inserted records. 
+    # The following fetch functionality should probably be in their respective models
 
     cursor.execute('SELECT * FROM magazines')
     magazines = cursor.fetchall()
